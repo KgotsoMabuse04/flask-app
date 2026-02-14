@@ -74,7 +74,8 @@ def login():
         if user and check_password_hash(user.password, request.form['password']):
             login_user(user)
             return redirect(url_for('dashboard'))
-        return render_template("login.html")
+    
+    return render_template("login.html")
     
 @app.route('/logout')
 @login_required 
