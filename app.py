@@ -4,7 +4,7 @@ Created on Sat Feb 14 02:43:43 2026
 
 @author: lesii
 """
-
+import os
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
@@ -140,4 +140,4 @@ if __name__ == "__main__":
    # thread.start()
     
     
-    app.run(host="0.0.0.0", port=5000, debug=True) 
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT",5000)), debug=True) 
